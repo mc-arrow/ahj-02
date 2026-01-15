@@ -1,9 +1,14 @@
 .grid-container {
-  display: grid;
-  justify-content: center;
-  margin-top: 20px;
+    width: 630px;
+    height: 630px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
 }
 
+/*
 .grid-row {
   margin-bottom: 10px;
 }
@@ -17,14 +22,14 @@
   display: block;
   clear: both;
 }
+*/
 
-.grid-cell {
-  width: 150px;
-  height: 150px;
-  margin-right: 10px;
-  float: left;
-  border-radius: 3px;
-  background: #8687ad;
+.hole {
+    width: 130px;
+    height: 130px;
+    margin: 10px;
+    border-radius: 3px;
+    background: #8687ad;
 }
 
 .grid-cell:last-child {
@@ -32,5 +37,5 @@
 }
 
 img {
-  padding: 15px 15px;
+  padding: 5px 5px;
 }

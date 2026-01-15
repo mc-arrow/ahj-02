@@ -1,4 +1,43 @@
-import Character from "./init";
+import goblinImage from "../img/goblin.png";
 
-const Game = new Character(document.querySelector(".grid-container"));
-Game.getRandomPosition();
+document.addEventListener("DOMContentLoaded", () => { 
+    const gameContainer = document.querySelector(".grid-container"); 
+    let currentHole = null;
+    let img;
+    
+for (let i = 0; i < 16; i++) {
+    const holeDiv = document.createElement("div");
+    holeDiv.classList.add("hole");
+    gameContainer.appendChild(holeDiv);
+}
+                          
+const holes = document.querySelectorAll(".hole")
+                          
+function getRandomHole() {
+    return holes[Math.floor(Math.random() * holes.length)];
+}
+                        
+function createImage()	{
+    img = document.createElement("img"); 
+    img.src = goblinImage;
+    img.alt = "Goblin Image";
+}
+
+function moveImage() { 
+    let newHole;
+    do {
+        newHole = getRandomHole();
+    } while (newHole === currentHole); 
+    newHole.append(img);
+    currentHole = newHole;
+}
+
+createImage();
+moveImage();
+setInterval(moveImage, 2000);
+});
+
+// import Character from "./init";
+
+// const Game = new Character(document.querySelector(".grid-container"));
+// Game.getRandomPosition();
